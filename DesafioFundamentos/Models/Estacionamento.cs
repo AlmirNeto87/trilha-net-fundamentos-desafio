@@ -6,12 +6,24 @@ namespace DesafioFundamentos.Models
         private decimal precoPorHora = 0;
         private List<string> veiculos = new List<string>();
 
+        private decimal saldoDiario = 0;
+
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
         {
             this.precoInicial = precoInicial;
             this.precoPorHora = precoPorHora;
         }
 
+        public void ListarValores()
+        {
+            Console.WriteLine($"Preço inicial: R$ {this.precoInicial}");
+            Console.WriteLine($"Preço por hora: R$ {this.precoPorHora}");
+        }
+
+        public void ListarSaldoDiario()
+        { 
+            Console.WriteLine($"Saldo diário: R$ {this.saldoDiario}");
+        }
         public void AdicionarVeiculo()
         {
             // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
@@ -48,7 +60,7 @@ namespace DesafioFundamentos.Models
                 // IMPLEMENTADO
                 horas = Convert.ToInt32(Console.ReadLine());
                 valorTotal = precoInicial + (precoPorHora * horas);
-
+                this.saldoDiario += valorTotal;
                 // TODO: Remover a placa digitada da lista de veículos
                 // *IMPLEMENTE AQUI*
 

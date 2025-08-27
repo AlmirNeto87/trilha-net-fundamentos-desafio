@@ -27,8 +27,10 @@ while (exibirMenu)
     Console.WriteLine("1 - Cadastrar veículo");
     Console.WriteLine("2 - Remover veículo");
     Console.WriteLine("3 - Listar veículos");
-    Console.WriteLine("4 - Encerrar");
-
+    Console.WriteLine("4 - Listar preços");
+    Console.WriteLine("5 - Listar saldo diário");
+    Console.WriteLine("6 - Encerrar");
+    
     switch (Console.ReadLine())
     {
         case "1":
@@ -44,8 +46,18 @@ while (exibirMenu)
             break;
 
         case "4":
+            es.ListarValores();
+            break;
+
+        case "5":
+            es.ListarSaldoDiario();
+            break;
+
+        case "6":
             exibirMenu = false;
             break;
+        
+        
 
         default:
             Console.WriteLine("Opção inválida");
